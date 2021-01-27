@@ -1,0 +1,3 @@
+-- MongoDB --
+# inicializar servidor mongoDB
+$ mongodb/bin/mongod --dbpath=/Users/hackncode/mongodb-data/
