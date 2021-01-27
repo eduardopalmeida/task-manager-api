@@ -1,7 +1,6 @@
 const sgMail = require('@sendgrid/mail')
 const { format } = require('sharp')
 
-
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const sendWecolmeEmail = (email, name) => {

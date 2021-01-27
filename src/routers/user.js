@@ -11,12 +11,9 @@ router.post('/users', async (req, res) => {
     const user = new User(req.body)	
     try {	
         await user.save()
-
-        await sendWecolmeEmail(user.email, user.name)
-
+        sendWecolmeEmail(user.email, user.name)
         const token = await user.generateAuthToken()
         console.log('User SIGN-IN')
-
         res.status(201).send({user, token})
     } catch (error) {
         res.status(400).send(error)
