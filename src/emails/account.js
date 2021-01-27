@@ -1,15 +1,15 @@
 const sgMail = require('@sendgrid/mail')
 const { format } = require('sharp')
 
+
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const sendWecolmeEmail = (email, name) => {
   sgMail.send({
-    to: 'andrereigoto@gmail.com' ,
+    to: email,
     from: 'eduardopalmeida@gmail.com',
-    subject: 'Isto é um teste!',
-    text: `Olá André!\n\n Tudo em ordem?\n Estou aqui a fazer o meu curso de Node.js e já consigo enviar emails através da minha app.\n` + 
-          `Continuação de um bom trabalho.\n\n Abraço,\n Eduardo `,
+    subject: 'Thanks for joining in!',
+    text: `Welcome to the app, ${name}. Let me know how you get along with app.`,
   })
 }
 
